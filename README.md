@@ -1,11 +1,11 @@
 # Browser Extensions Manager Web App
 
-A **demo web app** that simulates a browser extension manager. Users can organize, filter, and enable pseudo extensions from a clean, interactive interface. Built to showcase **frontend skills** using **Next.js**, **TypeScript**, and **Tailwind CSS**.
+A **demo web app** that simulates a browser extension manager. Users can organize, filter, and enable mock extensions from a clean, interactive interface. Built to showcase **frontend skills** using **Next.js**, **TypeScript**, and **Tailwind CSS**.
 
 ---
 
 ## Features
-- Add, remove, and manage pseudo browser extensions  
+- Remove, and manage mock browser extensions  
 - Enable or disable extensions with a single click  
 - Search and filter extensions easily  
 - Responsive and modern UI using Tailwind CSS  
@@ -23,7 +23,7 @@ A **demo web app** that simulates a browser extension manager. Users can organiz
 - **Tailwind CSS** – Utility-first CSS framework for rapid UI development  
 
 **Tools & Utilities**
-- **Vercel** – Deployment platform (optional)  
+- **Vercel** – Deployment platform  
 - **ESLint & Prettier** – Code quality and formatting  
 
 ---
