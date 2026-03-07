@@ -56,8 +56,8 @@ export default function Home() {
   }, [dark]);
 
   return (
-    <div className="h-screen bg-linear-to-b dark:from-[#040918] dark:to-[#091540] flex justify-center items-start">
-      <div className="w-7/12 mt-8">
+    <div className="h-screen bg-linear-to-b dark:from-[#040918] dark:to-[#091540] from-[#EBF2FC] to-[#EEF8F9] flex justify-center items-start overflow-scroll">
+      <div className="w-full lg:w-9/12 lg:mx-0 xl:w-7/12 mx-4 mt-8">
         <header className="flex justify-between dark:bg-[hsl(226,25%,17%)] p-3 rounded-xl">
           <Image 
             src="/assets/images/logo.svg"
@@ -66,10 +66,10 @@ export default function Home() {
             height={160}
             
           />
-          <button className="dark:bg-[hsl(225,23%,24%)] p-3 rounded-xl dark:hover:bg-[hsl(226,11%,37%)] transition">
+          <button className="dark:bg-[hsl(225,23%,24%)] p-3 rounded-xl dark:hover:bg-[hsl(226,11%,37%)] transition" onClick={() => setDark(!dark)}>
             <Image 
-              src="/assets/images/icon-sun.svg"
-              alt="Sun"
+              src={`/assets/images/icon-${dark ? "sun" : "moon"}.svg`}
+              alt="Toggle"
               width={16}
               height={16}
             />
@@ -89,10 +89,10 @@ export default function Home() {
                     onChange={() => setSelected(index)}
                   />
                   <span className={`
-                      rounded-full py-1.5 px-3.5 text-white transition
+                      rounded-full py-1.5 px-3.5 transition
                       ${selected === index
-                        ? "bg-[hsl(3,71%,56%)] hover:bg-[hsl(3,86%,64%)]"
-                        : "dark:hover:bg-[hsl(226,11%,37%)] dark:bg-[hsl(225,23%,24%)]"
+                        ? "bg-[hsl(3,77%,44%)] hover:bg-[hsl(3,71%,56%)] text-white dark:text-black"
+                        : "dark:hover:bg-[hsl(226,11%,37%)] dark:bg-[hsl(225,23%,24%)] dark:text-white"
                       }
                     `}
                   >
@@ -102,10 +102,10 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-3 w-full gap-2 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-2 mt-4">
             {filteredExtensions.map((object: ExtensionObject, index: number) => {
               return (
-                <div key={index} className="w-full p-4 bg-[hsl(226,25%,17%)] rounded-2xl flex flex-col gap-6">
+                <div key={index} className="w-full p-4 dark:bg-[hsl(226,25%,17%)] rounded-2xl flex flex-col gap-6 border dark:border-0">
                   <div className="flex items-start gap-3 h-20">
                     <Image
                       src={`/assets/images/${object.iconfile}`}
@@ -114,12 +114,12 @@ export default function Home() {
                       height={48}
                     />
                     <div className="flex flex-col">
-                      <h2 className="text-white text-lg font-bold">{object.title}</h2>
+                      <h2 className="dark:text-white text-lg font-bold">{object.title}</h2>
                       <p className="text-slate-400 text-sm">{object.description}</p>
                     </div>
                   </div>
                   <div className="flex justify-between">
-                    <button className="px-3 py-1 rounded-full border-[0.1px] border-slate-500 text-sm text-white hover:bg-[hsl(3,86%,64%)] transition" onClick={() => removeExtension(index)}>Remove</button>
+                    <button className="px-3 py-1 rounded-full border-[0.1px] border-slate-500 text-sm dark:text-white hover:bg-[hsl(3,86%,64%)] dark:hover:text-black hover:text-white transition" onClick={() => removeExtension(index)}>Remove</button>
                     <label className="relative inline-block w-14 h-7">
                       <input 
                         type="checkbox"
